@@ -1,0 +1,32 @@
+<!doctype html>
+<%- include('../partials/head'); %>
+<html lang="en">
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<body class="text-center">
+
+<main>
+    <form action="/logon" method="post">
+        <p class="errorMessage"><%= errorMessage %></p>
+        <h1>L O G O N</h1>
+        <hr>
+        <label for="customerID"><b>Email</b></label>
+        <label>
+            <input type="email" placeholder='Enter Your Email' name="Email"required autofocus>
+        </label><br>
+        <label for="psw"><b>Password</b></label>
+        <label>
+            <input type="password" placeholder="Enter Your Password" name="Password" required>
+        </label><br>
+        <a class="btn btn-outline-dark cancel" href="/">Cancel</a>
+        <input type="submit" value="LogOn" class="btn btn-default btn-success"/>
+
+
+    </form>
+</main>
+</body>
+<%- include('../partials/footer'); %>
+
+</html>

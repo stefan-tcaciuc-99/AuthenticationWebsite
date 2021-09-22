@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head'); %>
+<header>
+    <%- include('../partials/header'); %>
+</header>
+<main>
+    <section class="container">
+        <section class="row">
+        </section>
+        <br><br>
+        <h1>List of Accounts (<%= accounts.length %>)</h1>
+        <br><br>
+
+
+        <article class="table-responsive-sm">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th class="d-print-none">
+                    <th class="d-print-none">
+                        <a class="btn btn-sm btn-success" href="/create">Add</a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <% accounts.forEach((account) => { %>
+                    <tr>
+                        <td><%= account.Email %></td>
+                        <td><%= account.Role %></td>
+                        <td></td>
+                        <td class="d-print-none">
+                            <a class="btn btn-sm btn-warning" href="/edit/<%= account.Email %>">Edit</a>
+                            <a class="btn btn-sm btn-danger" href="/delete/<%= account.Email %>">Delete</a>
+                        </td>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </article>
+    </section>
+</main>
+<br><br>
+
+<%- include('../partials/footer'); %>
+</html>
